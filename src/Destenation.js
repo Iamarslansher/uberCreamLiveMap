@@ -18,7 +18,6 @@ export default function Destenation({ navigation, route }) {
   const [longitude, setLongitude] = useState(null);
   const [places, setPlaces] = useState([]);
   const [destenation, setDestenation] = useState(null);
-  const [inputText, setInputText] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -68,7 +67,6 @@ export default function Destenation({ navigation, route }) {
   };
 
   const selectedDestenation = (place) => {
-    console.log(place, "place");
     setLatitude(place.geocodes.main.latitude);
     setLongitude(place.geocodes.main.longitude);
     setDestenation(place);

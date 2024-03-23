@@ -17,7 +17,7 @@ function Pickup({ navigation }) {
   const [longitude, setLongitude] = useState(null);
   const [places, setPlaces] = useState([]);
   const [pickUp, setPickUp] = useState(null);
-  const [inputText, setInputText] = useState("");
+  // const [inputText, setInputText] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -46,7 +46,6 @@ function Pickup({ navigation }) {
 
   const searchPlace = (text) => {
     setPickUp(null);
-    // console.log(text, "text");
     const options = {
       method: "GET",
       headers: {
@@ -67,8 +66,6 @@ function Pickup({ navigation }) {
   };
 
   const selectedPickUp = (place) => {
-    console.log(place, "place");
-    console.log(longitude, "longitude in searchPlace");
     setLatitude(place.geocodes.main.latitude);
     setLongitude(place.geocodes.main.longitude);
     setPickUp(place);
